@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include "NameGenerator.h"
+#include "BaseEntity.h"
 
 int main()
 {
@@ -10,5 +11,15 @@ int main()
     {
         std::cout << nameGen->generateName(6) << std::endl;
     }
+
+    BaseEntity* player = new BaseEntity();
+    player->printStats();
+    player->gainHealth(35);
+    player->printStats();
+    player->takeDamage(95);
+    player->printStats();
+    player->takeDamage(45);
+    player->printStats();
+
     return 0;
 }

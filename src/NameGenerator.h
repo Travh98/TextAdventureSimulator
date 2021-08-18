@@ -8,6 +8,7 @@ class NameGenerator
     public:
     NameGenerator();
     ~NameGenerator();
+    std::string generateName();
     std::string generateName(int length);
     private:
 

@@ -9,6 +9,14 @@ NameGenerator::NameGenerator()
     srand(time(NULL));  // Initialize seed
 }
 
+std::string NameGenerator::generateName()
+{
+    std::default_random_engine lengthGenerator(rand());
+    std::uniform_int_distribution<int> distribution(3,12);
+    int length = distribution(lengthGenerator);
+    return NameGenerator::generateName(length);
+}
+
 std::string NameGenerator::generateName(int length)
 {
     std::string name;
@@ -51,9 +59,8 @@ std::string NameGenerator::generateName(int length)
                     case 2: vowel = 'i'; break;
                     case 3: vowel = 'o'; break;
                     case 4: vowel = 'u'; break;
-                    // case 5: vowel = 'y'; break;
+                    // case 5: vowel = 'y'; break;  // Too many y's, why???
                     default:
-                    std::cout << "you fucked up in the vowel generator";
                     break;
                 }
                 name[i] = vowel;
